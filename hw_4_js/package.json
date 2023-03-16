@@ -1,0 +1,12 @@
+{
+  "name": "hw_4_js",
+  "version": "1.0.0",
+  "description": "![alt text](https://i.ibb.co/fvXHLPT/ERD-Todo-List-drawio.png)",
+  "main": "index.js",
+  "scripts": {
+    "01_double_linked_list": "node 01_double_linked_lists.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
