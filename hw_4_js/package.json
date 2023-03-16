@@ -4,7 +4,8 @@
   "description": "![alt text](https://i.ibb.co/fvXHLPT/ERD-Todo-List-drawio.png)",
   "main": "index.js",
   "scripts": {
-    "01_double_linked_list": "node 01_double_linked_lists.js"
+    "01_doublelinkedlist": "node 01_doublelinkedlist.js",
+    "09_hashtable": "node 09_hashtable.js"
   },
   "keywords": [],
   "author": "",
