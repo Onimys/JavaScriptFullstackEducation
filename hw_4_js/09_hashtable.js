@@ -1,3 +1,8 @@
+/*
+ * Примитивная реализация, основанная на js объектах.
+ * Более правильную реализацию см. в hw_5_ts\build\09_hashtable.js
+ * */
+
 class HashTable {
   constructor() {
     this._values = {}

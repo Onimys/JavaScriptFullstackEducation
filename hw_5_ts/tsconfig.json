@@ -1,0 +1,19 @@
+{
+  // "extends": "./tsconfig-checks.json" - наследование
+  // "files": [ "core.ts", "app.ts"] - конкретные файлы для компиляции (маленькие проекты), приоритетнее include
+
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "target": "es5", // версия ECMAScript
+    "sourceMap": true, // генерировать или нет файлы js.map
+    "removeComments": true, // удаление комментариев
+    "outDir": "build" // апапку куда будут сложены js файлы
+  },
+  "exclude": ["node_modules"], // исключим директории npm
+  "include": ["src/scripts/**/*"] // где искать ts файлы, по умолчанию ["**/*"]
+}
