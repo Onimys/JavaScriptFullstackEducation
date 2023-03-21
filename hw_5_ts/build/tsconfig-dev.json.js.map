@@ -1,0 +1,1 @@
+{"version":3,"file":"tsconfig-dev.json.js","sourceRoot":"","sources":["../tsconfig-dev.json.ts"],"names":[],"mappings":";AAAA;IACE,SAAS,CAAA;IAAE,iBAAiB;QAC5B,iBAAiB,CAAA;IAAE;QAEnB,gBAAgB,CAAA;QAAE,KAAK;YACrB,oBAAoB,CAAA;QAAE,KAAK;YAC3B,sBAAsB,CAAA;QAAE,IAAI;YAC5B,mBAAmB,CAAA;QAAE,IAAI,CAAA;KAC5B;CACA"}

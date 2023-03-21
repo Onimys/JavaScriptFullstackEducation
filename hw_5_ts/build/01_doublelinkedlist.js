@@ -1,43 +1,32 @@
 "use strict";
-var ListNode = (function () {
-    function ListNode(value, next, prev) {
-        if (next === void 0) { next = null; }
-        if (prev === void 0) { prev = null; }
+class ListNode {
+    constructor(value, next = null, prev = null) {
         this._value = value;
         this.next = next;
         this.prev = prev;
     }
-    Object.defineProperty(ListNode.prototype, "value", {
-        get: function () {
-            return this._value;
-        },
-        set: function (newValue) {
-            this._value = newValue;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ListNode.prototype.toString = function () {
-        return "".concat(this.value);
-    };
-    return ListNode;
-}());
-var DoublyLinkedList = (function () {
-    function DoublyLinkedList() {
+    get value() {
+        return this._value;
+    }
+    set value(newValue) {
+        this._value = newValue;
+    }
+    toString() {
+        return `${this.value}`;
+    }
+}
+class DoublyLinkedList {
+    constructor() {
         this._root = null;
         this._last = null;
         this._length = 0;
     }
-    Object.defineProperty(DoublyLinkedList.prototype, "length", {
-        get: function () {
-            return this._length;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    DoublyLinkedList.prototype.push = function (value) {
+    get length() {
+        return this._length;
+    }
+    push(value) {
         var _a;
-        var newNode = new ListNode(value);
+        const newNode = new ListNode(value);
         if (this._last) {
             this._last.next = newNode;
         }
@@ -48,9 +37,9 @@ var DoublyLinkedList = (function () {
         }
         this._length++;
         return this;
-    };
-    DoublyLinkedList.prototype.unshift = function (value) {
-        var newNode = new ListNode(value, this._root);
+    }
+    unshift(value) {
+        const newNode = new ListNode(value, this._root);
         if (this._root) {
             this._root.prev = newNode;
         }
@@ -60,13 +49,13 @@ var DoublyLinkedList = (function () {
         }
         this._length++;
         return this;
-    };
-    DoublyLinkedList.prototype.find = function (value) {
+    }
+    find(value) {
         if (!this._root) {
             return null;
         }
-        var index = -1;
-        var current = this._root;
+        let index = -1;
+        let current = this._root;
         while (current) {
             if (value && current.value === value) {
                 return [current, index + 1];
@@ -75,15 +64,15 @@ var DoublyLinkedList = (function () {
             current = current.next;
         }
         return null;
-    };
-    DoublyLinkedList.prototype.replace = function (oldValue, newvalue) {
+    }
+    replace(oldValue, newvalue) {
         if (oldValue === newvalue) {
             return this;
         }
         if (!this._root) {
             return null;
         }
-        var current = this._root;
+        let current = this._root;
         while (current) {
             if (current.value === oldValue) {
                 current.value = newvalue;
@@ -91,13 +80,13 @@ var DoublyLinkedList = (function () {
             current = current.next;
         }
         return this;
-    };
-    DoublyLinkedList.prototype.delete = function (value) {
+    }
+    delete(value) {
         if (!this._root) {
             return null;
         }
-        var deleted;
-        var current = this._root;
+        let deleted;
+        let current = this._root;
         while (current) {
             if (current.value === value) {
                 deleted = current;
@@ -117,8 +106,8 @@ var DoublyLinkedList = (function () {
                     }
                 }
                 else {
-                    var previousNode = deleted.prev;
-                    var nextNode = deleted.next;
+                    const previousNode = deleted.prev;
+                    const nextNode = deleted.next;
                     if (previousNode)
                         previousNode.next = nextNode;
                     if (nextNode)
@@ -129,25 +118,24 @@ var DoublyLinkedList = (function () {
             current = current.next;
         }
         return this;
-    };
-    DoublyLinkedList.prototype.toArray = function () {
-        var nodes = [];
-        var currentNode = this._root;
+    }
+    toArray() {
+        const nodes = [];
+        let currentNode = this._root;
         while (currentNode) {
             nodes.push(currentNode);
             currentNode = currentNode.next;
         }
         return nodes;
-    };
-    DoublyLinkedList.prototype.toString = function () {
+    }
+    toString() {
         return this.toArray()
-            .map(function (node) { return node.toString(); })
+            .map((node) => node.toString())
             .join("<->");
-    };
-    return DoublyLinkedList;
-}());
+    }
+}
 console.log("-------- 01_doublelinkedlist.ts --------");
-var list = new DoublyLinkedList();
+let list = new DoublyLinkedList();
 console.log("list.push(8)");
 list.push(8);
 console.log("list.push(4)");

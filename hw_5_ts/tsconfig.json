@@ -3,16 +3,46 @@
   // "files": [ "core.ts", "app.ts"] - конкретные файлы для компиляции (маленькие проекты), приоритетнее include
 
   "compilerOptions": {
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "alwaysStrict": true,
-    "strictBindCallApply": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "target": "es5", // версия ECMAScript
+    "module": "commonjs", // модульная система, которую будет использовать приложение
+    "moduleResolution": "node", // Стратегия, которая будет использоваться для импорта модулей
+
+    /* Strict Checks */
+
+    //"strict": true, / /включение автоматически активирует абсолютно все флаги секции Strict Checks
+    "alwaysStrict": true, // компилятор будет парсить код в строгом режиме и добавлять “use strict” в выходные файлы
+    "noImplicitAny": true, // необходимо явно писать any, для привлечения внимания разработчика
+    "strictNullChecks": true, // запрещается передача null (undefined), где ожидаются другие типы, если нет явного разрешения
+    "strictPropertyInitialization": true, // объявленные свойства класса должны быть инициализированы
+    "strictFunctionTypes": true, // более строгая проверка сигнатур функций (например, указание void в interface)
+    "strictBindCallApply": true, // включает более строгую проверку сигнатур при использовании соответствующих методов: bind, call, apply
+    "noImplicitThis": true, // проверяет, что контекст выполнения известен
+
+    /* Linter Checks */
+    "noPropertyAccessFromIndexSignature": true, // запрещает обращаться к свойствам объекта через точку ([key: string]: string)
+    "noUncheckedIndexedAccess": false, // string | undefined для [key: string]: string
+    "noImplicitReturns": true, // все ветки функции должны возвращать значение
+    "noFallthroughCasesInSwitch": true, // проверяет наличие break в операторе switch/case
+    "noUnusedLocals": false, // код проверяется на наличие неиспользуемых переменных (для prod, так как мешает разработке)
+    "noUnusedParameters": false, // код проверяется на наличие неиспользуемых аргументов функций и методов (для prod, так как мешает разработке)
+
+    /* Advanced */
+    "allowUnreachableCode": false, // разрешает недосягаемый код – код, написанный после операторов return, throw, break, continue
+    "allowUnusedLabels": false, // разрешает неиспользуемые лэйблы
+    //"noImplicitUseStrict": false, // автоматически добавляет "use strict" если target версия меньше, чем ES6
+    //"suppressExcessPropertyErrors": false, // проверяет, чтобы объект не мог содержать свойства, которые не были описаны в его структуре
+    //"suppressImplicitAnyIndexErrors": false, // проверяет, что используя скобочную нотацию невозможно обращаться к свойствам объекта, которые в нём не объявлены ни явно, ни через произвольные параметры
+    //"noStrictGenericChecks": false, // делать компилятор «более лояльным» при работе с generics
+
+    "target": "es6", // версия ECMAScript -> lib: ['DOM', 'ES5', 'ScriptHost']
     "sourceMap": true, // генерировать или нет файлы js.map
     "removeComments": true, // удаление комментариев
-    "outDir": "build" // апапку куда будут сложены js файлы
+    "outDir": "build", // папка куда будут сложены js файлы
+    //"outFile": "bundle.js" // слбрать файлы в один, не работает с module: commonjs и ES6
+    "esModuleInterop": true, // позволяет импортировать CommonJS пакеты как ES6
+    "forceConsistentCasingInFileNames": true, // режим чувствительности к регистру (case-sensitive) для импорта файлов
+    "allowJs": false, // компилятор будет обрабатывать не только ts файлы, но и js
+    "checkJs": false, // TypeScript будет проверять ошибки не только в ts, но и в js-файлах
+    "experimentalDecorators": false // активирует синтаксис @ + emitDecoratorMetadata - в рантайме предоставляет декораторам дополнительные мета-данны
   },
   "exclude": ["node_modules"], // исключим директории npm
   "include": ["src/scripts/**/*"] // где искать ts файлы, по умолчанию ["**/*"]
