@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "01_doublelinkedlist": "node 01_doublelinkedlist.js",
+    "06_binarysearchtree": "node 06_binarysearchtree.js",
     "09_hashtable": "node 09_hashtable.js"
   },
   "keywords": [],
