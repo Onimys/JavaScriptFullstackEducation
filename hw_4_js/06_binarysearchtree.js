@@ -58,6 +58,7 @@ class BinarySearchTree {
 
   remove(value) {
     this.root = this.removeNode(this.root, value)
+    this._length--
   }
 
   removeNode(node, value) {
