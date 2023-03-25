@@ -1,0 +1,14 @@
+{
+  "name": "hw_6_algorithms_and_patterns",
+  "version": "1.0.0",
+  "description": "Домашнее задание hw_6_algorithms_and_patterns",
+  "main": "index.html",
+  "scripts": {
+    "serve": "npx live-server --watch=dist"
+  },
+  "author": "Pozdnyakov Sergey",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
