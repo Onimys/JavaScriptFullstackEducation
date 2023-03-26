@@ -1,10 +1,27 @@
 import { Builder, DbSettings } from "./patterns/01_builder.js"
 import { DatabaseUserPermission, DatabaseUserService, User, UserRole } from "./patterns/02_proxy.js"
 import { WorkerRoom, NotificationWorker } from "./patterns/03_mediator.js"
+import { Graph } from "./algorithms/01_bellmanford.js"
 
 /*
  * ALGORITHMS
  */
+const graph = new Graph(5)
+
+graph.addEdge([0, 1, 2])
+graph.addEdge([0, 2, 1])
+graph.addEdge([1, 3, 4])
+graph.addEdge([2, 3, 1])
+graph.addEdge([3, 0, 2])
+graph.addEdge([3, 4, 1])
+
+//     1    4
+//   2/ \3 /
+//  0 -2- 3
+//   1\ /1
+//     2
+
+graph.BellmanFord(2)
 
 /*
  * PATTERNS: builder, proxy, mediator
