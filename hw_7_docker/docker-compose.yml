@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  api:
+    image: hw_7_docker:latest
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: development
+    volumes:
+      - .:/usr/src/hw_7_docker
+    #env_file:
+    #  - .env
+    command: npm run start:dev
+    ports:
+      - "8000:3000"
