@@ -41,6 +41,7 @@ FROM node:19.7-alpine As production
 
 COPY --chown=node:node --from=build /usr/src/hw_7_docker/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/hw_7_docker/dist ./dist
+COPY --chown=node:node --from=build /usr/src/hw_7_docker/views ./views
 
 # Запускаем сервер
 CMD [ "node", "dist/main.js" ]

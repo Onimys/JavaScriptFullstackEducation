@@ -31,7 +31,7 @@ $ npm run start:prod
 $ docker build -t hw_7_docker:latest .
 
 # run
-$ docker run --name hw_7_docker -p80:3000 hw_7_docker
+$ docker run --name hw_7_docker -p8000:3000 hw_7_docker
 
 # container development mode
 $ docker-compose up -d --build
