@@ -1,0 +1,47 @@
+.header {
+  display: grid;
+  grid-template-columns:
+    [start] 50px [logoend] 230px [menustart] minmax(320px, 1200px)
+    [menuend] 120px [subscribe] 50px [end];
+  column-gap: 60px;
+  margin-top: 20px;
+  align-items: center;
+
+  .logo {
+    grid-area: start / logoend;
+    cursor: pointer;
+  }
+
+  .navbar {
+    grid-area: logoend / menustart;
+    justify-self: flex-end;
+    align-content: center;
+
+    .nav-items {
+      display: flex;
+      gap: 20px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 16px;
+      white-space: nowrap;
+      list-style-type: none;
+      cursor: pointer;
+
+      .arrow-down {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        vertical-align: middle;
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .subscribe {
+    grid-area: menustart / menuend;
+
+    button {
+      padding: 16px 24px;
+    }
+  }
+}

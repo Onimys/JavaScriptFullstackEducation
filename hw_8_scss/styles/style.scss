@@ -1,0 +1,27 @@
+@use "_variables" as v;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: v.$font-family;
+  color: v.$text-color;
+  background: v.$bg-color;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@import "_common";
+@import "_layout";
+@import "_header";
+@import "_content";
+@import "_footer";
