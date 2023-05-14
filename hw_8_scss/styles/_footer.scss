@@ -2,4 +2,84 @@
   background: v.$black;
   padding: 40px;
   color: v.$text-color-light;
+
+  display: grid;
+  grid-template-columns: 10% 100px 120px 120px 1fr 10%;
+  grid-template-rows: 1fr auto;
+  justify-items: flex-start;
+  gap: 40px;
+  grid-template-areas:
+    ". logo menu connect subscribe ."
+    ". copyright copyright copyright copyright .";
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .menu {
+    grid-area: menu;
+  }
+
+  .connect {
+    grid-area: connect;
+  }
+
+  .subscribe {
+    grid-area: subscribe;
+    min-width: 400px;
+    width: 100%;
+
+    .subscribe-action {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+
+      .input {
+        width: 100%;
+        max-width: 600px;
+      }
+
+      .button {
+        font-weight: 600;
+        width: 120px;
+      }
+    }
+  }
+
+  ul {
+    margin-top: 20px;
+    list-style-type: none;
+    line-height: 26px;
+
+    a {
+      font-size: 11px;
+    }
+  }
+
+  .copyright {
+    grid-area: copyright;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+    & > div {
+      grid-area: 1 / 2;
+      font-size: 12px;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    ul {
+      grid-area: 1 / 4;
+      margin-top: 0px;
+      display: flex;
+      gap: 20px;
+      color: v.$text-color;
+    }
+  }
 }

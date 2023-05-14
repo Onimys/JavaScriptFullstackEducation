@@ -10,18 +10,95 @@
   border-radius: 8px;
   transition: all 0.2s;
 
+  &.rounded {
+    border-radius: 50%;
+
+    img {
+      margin-left: 0px;
+      transform: rotate(90deg);
+    }
+  }
+
+  &:hover {
+    background-color: v.$primary;
+  }
+
   &.black {
     background-color: v.$black;
     color: v.$text-color-light;
+
+    &:hover {
+      background-color: v.$primary;
+      color: v.$black;
+    }
   }
 
   &.primary {
     background-color: v.$primary;
     color: v.$black;
+
+    &:hover {
+      background-color: v.$black;
+      color: v.$bg-color;
+    }
   }
 
   &.primary-light {
     background-color: v.$primary-light;
     color: v.$black;
+
+    &:hover {
+      background-color: v.$black;
+      color: v.$bg-color;
+      border: 1px solid v.$bg-color;
+    }
   }
+
+  img {
+    margin-left: 10px;
+  }
+}
+
+.input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+h1 {
+  color: black;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+h3 {
+  color: black;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+h4 {
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.bg-primary {
+  background-color: v.$primary;
+}
+
+.bg-primary-light {
+  background-color: v.$primary-light;
+}
+
+.bg-secondary {
+  background-color: v.$secondary;
+}
+
+.bg-green {
+  background-color: v.$green;
+}
+
+p {
+  margin: 20px 0;
+  font-size: 14px;
 }

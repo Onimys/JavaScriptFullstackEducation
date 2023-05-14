@@ -1,6 +1,107 @@
-.intro {
-  background: url(/images/lady.png);
+.promo-img {
   background-size: 100%;
-  height: 100%;
-  margin-top: -20px;
+  height: 330px;
+  width: 350px;
+  position: absolute;
+  border-radius: 50%;
+  right: 180px;
+  top: 220px;
+  background-color: #ffe489;
+}
+
+.promo {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  justify-content: center;
+
+  .title {
+    background-color: #fffae7;
+    grid-area: 1 / 1;
+
+    padding: 160px 200px 160px 100px;
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: 64px;
+      line-height: 68px;
+    }
+
+    .subtitle {
+      margin-top: 20px;
+      line-height: 24px;
+      font-size: 20px;
+    }
+  }
+
+  .fill {
+    grid-area: 1 / 2;
+    background-color: v.$black;
+  }
+
+  .promo-action {
+    margin-top: 60px;
+
+    .button {
+      font-weight: 600;
+      width: auto;
+      padding: 18px 26px;
+      font-size: 18px;
+
+      &.rounded {
+        margin-left: 36px;
+        padding: 16px 16px;
+      }
+    }
+
+    span {
+      margin-left: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      color: v.$black;
+    }
+  }
+}
+
+.services {
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  h1 {
+    text-align: center;
+  }
+
+  h4 {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .services-list {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-content: space-between;
+    align-items: baseline;
+
+    div {
+      width: 264px;
+      padding: 25px 18px 15px 18px;
+      border-radius: 15px;
+      flex-basis: 25%;
+      flex-shrink: 0;
+    }
+
+    .button {
+      font-weight: 600;
+      width: 100%;
+    }
+
+    .english,
+    .preparatory {
+      align-self: flex-end;
+    }
+  }
 }

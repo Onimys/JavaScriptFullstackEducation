@@ -30,24 +30,94 @@ a {
   border-radius: 8px;
   transition: all 0.2s;
 }
+.button.rounded {
+  border-radius: 50%;
+}
+.button.rounded img {
+  margin-left: 0px;
+  transform: rotate(90deg);
+}
+.button:hover {
+  background-color: #ffb2a8;
+}
 .button.black {
   background-color: #1b1a1f;
   color: white;
+}
+.button.black:hover {
+  background-color: #ffb2a8;
+  color: #1b1a1f;
 }
 .button.primary {
   background-color: #ffb2a8;
   color: #1b1a1f;
 }
+.button.primary:hover {
+  background-color: #1b1a1f;
+  color: white;
+}
 .button.primary-light {
   background-color: #ffb0aa;
   color: #1b1a1f;
+}
+.button.primary-light:hover {
+  background-color: #1b1a1f;
+  color: white;
+  border: 1px solid white;
+}
+.button img {
+  margin-left: 10px;
+}
+
+.input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+h1 {
+  color: black;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+h3 {
+  color: black;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+h4 {
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.bg-primary {
+  background-color: #ffb2a8;
+}
+
+.bg-primary-light {
+  background-color: #ffb0aa;
+}
+
+.bg-secondary {
+  background-color: #ffeeb6;
+}
+
+.bg-green {
+  background-color: #b3dfc4;
+}
+
+p {
+  margin: 20px 0;
+  font-size: 14px;
 }
 
 .wrapper {
   display: grid;
   grid-template: auto 1fr auto/1fr;
   grid-template-areas: "header" "content" "footer";
-  gap: 40px 30px;
+  gap: 20px 30px;
   min-height: 100vh;
 }
 .wrapper .header {
@@ -101,17 +171,166 @@ a {
   padding: 16px 24px;
 }
 
-.intro {
-  background: url(/images/lady.png);
+.promo-img {
   background-size: 100%;
-  height: 100%;
-  margin-top: -20px;
+  height: 330px;
+  width: 350px;
+  position: absolute;
+  border-radius: 50%;
+  right: 180px;
+  top: 220px;
+  background-color: #ffe489;
+}
+
+.promo {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  justify-content: center;
+}
+.promo .title {
+  background-color: #fffae7;
+  grid-area: 1/1;
+  padding: 160px 200px 160px 100px;
+}
+.promo .title h1 {
+  margin-bottom: 15px;
+  font-size: 64px;
+  line-height: 68px;
+}
+.promo .title .subtitle {
+  margin-top: 20px;
+  line-height: 24px;
+  font-size: 20px;
+}
+.promo .fill {
+  grid-area: 1/2;
+  background-color: #1b1a1f;
+}
+.promo .promo-action {
+  margin-top: 60px;
+}
+.promo .promo-action .button {
+  font-weight: 600;
+  width: auto;
+  padding: 18px 26px;
+  font-size: 18px;
+}
+.promo .promo-action .button.rounded {
+  margin-left: 36px;
+  padding: 16px 16px;
+}
+.promo .promo-action span {
+  margin-left: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1b1a1f;
+}
+
+.services {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.services h1 {
+  text-align: center;
+}
+.services h4 {
+  margin-top: 20px;
+  text-align: center;
+}
+.services .services-list {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  align-items: baseline;
+}
+.services .services-list div {
+  width: 264px;
+  padding: 25px 18px 15px 18px;
+  border-radius: 15px;
+  flex-basis: 25%;
+  flex-shrink: 0;
+}
+.services .services-list .button {
+  font-weight: 600;
+  width: 100%;
+}
+.services .services-list .english,
+.services .services-list .preparatory {
+  align-self: flex-end;
 }
 
 .footer {
   background: #1b1a1f;
   padding: 40px;
   color: white;
+  display: grid;
+  grid-template-columns: 10% 100px 120px 120px 1fr 10%;
+  grid-template-rows: 1fr auto;
+  justify-items: flex-start;
+  gap: 40px;
+  grid-template-areas: ". logo menu connect subscribe ." ". copyright copyright copyright copyright .";
+}
+.footer .logo {
+  grid-area: logo;
+}
+.footer .menu {
+  grid-area: menu;
+}
+.footer .connect {
+  grid-area: connect;
+}
+.footer .subscribe {
+  grid-area: subscribe;
+  min-width: 400px;
+  width: 100%;
+}
+.footer .subscribe .subscribe-action {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.footer .subscribe .subscribe-action .input {
+  width: 100%;
+  max-width: 600px;
+}
+.footer .subscribe .subscribe-action .button {
+  font-weight: 600;
+  width: 120px;
+}
+.footer ul {
+  margin-top: 20px;
+  list-style-type: none;
+  line-height: 26px;
+}
+.footer ul a {
+  font-size: 11px;
+}
+.footer .copyright {
+  grid-area: copyright;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
+.footer .copyright > div {
+  grid-area: 1/2;
+  font-size: 12px;
+}
+.footer .copyright > div span {
+  font-weight: 600;
+}
+.footer .copyright ul {
+  grid-area: 1/4;
+  margin-top: 0px;
+  display: flex;
+  gap: 20px;
+  color: #6a6a6a;
 }
 
 /*# sourceMappingURL=style.css.map */
