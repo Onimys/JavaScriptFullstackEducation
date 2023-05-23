@@ -1,0 +1,18 @@
+@import "src/styles/variables.module";
+
+.empty-result-wrapper {
+  text-align: center;
+
+  .empty-result {
+    width: 100%;
+    text-align: center;
+
+    img {
+      width: 200px !important;
+    }
+  }
+
+  .empty-result-title {
+    color: $text-color;
+  }
+}
